@@ -6,32 +6,42 @@ import matplotlib.pyplot as plt
 import cartopy.crs as ccrs
 
 def main(filename):
-    #Float is size in inches
-    fig = plt.figure(figsize = (30.0, 30.0))
+    # float is size in inches
+    # set resolution to high
+    fig = plt.figure(figsize = (15.0, 15.0, dpi = 300))
 
-    # add_subplot(nrows, ncols, index, **kwargs)
-    ax = fig.add_subplot(1, 1, 1, projection=ccrs.PlateCarree())
+    # central_longitude "55.2708" is DXB longitude, centering the map on Dubai
+    ax = fig.add_subplot(1, 1, 1, projection=ccrs.PlateCarree(central_longitude=55.2708))
 
     # make the map global
     ax.set_global()
 
-    # changed color to subtle pink
-    ax.coastlines(color = '#ff6188')
+    # set coastlines color to "FAUX-STRAWBERRY"
+    # changed linewidth
+    ax.coastlines(color = '#ff6188', linewidth= 0.5)
 
     # define the expected CSV columns
     csv_cols = ('dep_lat', 'dep_lon', 'arr_lat', 'arr_lon', 'flight_nb')
 
-    #read the csv
+    # read the csv
+    # set the data
     routes = pd.read_csv(filename, names = csv_cols, na_values=['\\N'], sep = ',', skiprows = 1)
 
-    # dep and arr aggregate in two plots
-    # line color changed to cyan
-    # Geodetic projection gives the curve to the line
-    ax.plot(routes['dep_lat'], routes['dep_lon'], color = '#78dce8', transform=ccrs.Geodetic())
-    ax.plot(routes['arr_lat'], routes['arr_lon'], color = '#78dce8',transform=ccrs.Geodetic())
+    # put the lons and lats separated
+    dep_lon, dep_lat = routes['dep_lon'], routes['dep_lat']
+    arr_lon, arr_lat = routes['arr_lon'], routes ['arr_lat']
 
-    #display the map
+    # data to be plot
+    # changed color of the line to "FAUX-SKY BLUE"
+    # "Geodetic()" set the lines in the spherical shape of the world
+    # changed the linewidth
+    ax.plot([dep_lon, arr_lon], [dep_lat, arr_lat], color = '#78dce8',linewidth= 0.1, transform=ccrs.Geodetic())
+
+    # display the map
     plt.show()
+
+    # save output image of map
+    #plt.savefig('output.svg', dpi=300, facecolor='black')
 
 # to print the map
 if __name__ == '__main__':
