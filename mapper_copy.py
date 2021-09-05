@@ -45,4 +45,4 @@ def main(filename):
 
 # to print the map
 if __name__ == '__main__':
-    main('flight_map.csv')
+    main('dataset.csv')
