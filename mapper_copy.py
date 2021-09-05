@@ -35,7 +35,7 @@ def main(filename):
     # changed color of the line to "FAUX-SKY BLUE"
     # "Geodetic()" set the lines in the spherical shape of the world
     # changed the linewidth
-    ax.plot([dep_lon, arr_lon], [dep_lat, arr_lat], color = '#78dce8',linewidth= 0.1, transform=ccrs.Geodetic())
+    ax.plot([dep_lon, arr_lon], [dep_lat, arr_lat], color = '#78dce8', linewidth= 0.1, transform=ccrs.Geodetic())
 
     # display the map
     plt.show()
