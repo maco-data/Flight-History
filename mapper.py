@@ -7,7 +7,7 @@ import os
 
 # set the path for custom background image
 current_directory = os.getcwd()
-os.environ["CARTOPY_USER_BACKGROUNDS"] = os.path.join(current_directory,'CARTOPY_IMGS')
+os.environ["CARTOPY_USER_BACKGROUNDS"] = os.path.join(current_directory,'data','CARTOPY_IMGS')
 os.path.join(current_directory, 'data', 'CARTOPY_IMGS')
 
 
