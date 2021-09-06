@@ -9,5 +9,5 @@ Flight Mapper
 # [x] Find how to make lines starter point to be DXB
   - Define the coordinates in lons and lats variables  as list.
   - Plotted the data group dogether by dep/arr lon & dep/arr lat.
-# [ ] Fix other minor any bugs
+# [x] Fix other minor any bugs
   - Set the lines to a width I am happy with

@@ -1,0 +1,7 @@
+{"__comment__": "JSON file specifying the image to use for a given type/name and resolution. Read in by cartopy.mpl.geoaxes.read_user_background_images.",
+    "Nasa": {
+      "__comment__": "Nasa Black Marbel",
+      "__source__": "https://www.nasa.gov/specials/blackmarble/2016/globalmaps/BlackMarble_2016_01deg.jpg",
+      "__projection__": "PlateCarree",
+      "high": "BlackMarble_2016_01deg.jpg"}
+}
