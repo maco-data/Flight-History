@@ -7,14 +7,14 @@ import os
 
 # set the path for custom background image
 current_directory = os.getcwd()
-os.environ["CARTOPY_USER_BACKGROUNDS"] = os.path.join(current_directory,'data','CARTOPY_IMGS')
+os.environ["CARTOPY_USER_BACKGROUNDS"] = os.path.join(current_directory, 'data', 'CARTOPY_IMGS')
 os.path.join(current_directory, 'data', 'CARTOPY_IMGS')
 
 
 def main(filename):
     # float is size in inches
     # set resolution to high
-    fig = plt.figure(figsize=(18.0, 9.0,), dpi=300)
+    fig = plt.figure(figsize=(10.0, 5.0,), dpi=300)
 
     # centering the map on Dubai, central_longitude "55.2708" is DXB longitude
     ax = fig.add_subplot(1, 1, 1, projection=ccrs.PlateCarree(central_longitude=55.2708))
@@ -39,7 +39,7 @@ def main(filename):
     ax.plot([dep_lon, arr_lon], [dep_lat, arr_lat], color='#f9ba00', linewidth=0.1, transform=ccrs.Geodetic())
 
     # save output image of map
-    plt.savefig('output.png')
+    plt.savefig('output.png', bbox_inches='tight', transparent=True, pad_inches=0)
 
     # display the map
     plt.show()
