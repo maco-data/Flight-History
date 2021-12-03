@@ -23,6 +23,8 @@ As mentioned before this data is personal as it came from my own records but you
 
 If preferred you can leave out the background image and use the parameters on Cartopy documentation to have the desired end results. As well as you can use any other custom images as long as you add the image information to the images.json file and keep it in the same folder too.
 
+![Output](https://github.com/maco-data/Flight-History/blob/main/output.png)
+
 ## Final Thoughts
 
 This was a great project and amazing memorabilia that I will print for myself. Also, I look forward to do the same for my friends once they decide to flight as Cabin Crew.
